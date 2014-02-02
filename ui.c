@@ -170,8 +170,14 @@ static void draw_text_line(int row, const char* t) {
   }
 }
 
+#ifdef BCM21553_RECOVERY
+//#define MENU_TEXT_COLOR 255, 193, 0, 255
+  #define MENU_TEXT_COLOR 255, 193, 0, 255
+#else
 //#define MENU_TEXT_COLOR 255, 160, 49, 255
-#define MENU_TEXT_COLOR 0, 191, 255, 255
+  #define MENU_TEXT_COLOR 0, 191, 255, 255
+#endif
+
 #define NORMAL_TEXT_COLOR 200, 200, 200, 255
 #define HEADER_TEXT_COLOR NORMAL_TEXT_COLOR
 
