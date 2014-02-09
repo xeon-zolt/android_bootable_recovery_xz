@@ -972,7 +972,14 @@ main(int argc, char **argv) {
     else
         ui_print("Shutting down...\n");
     sync();
-    reboot((!poweroff) ? RB_AUTOBOOT : RB_POWER_OFF);
+    if (poweroff)
+        reboot(RB_POWER_OFF);
+    else
+#ifdef BOARD_SEND_RECOVERY_DONE
+        reboot_wrapper("recovery_done");
+#else
+        reboot(RB_AUTBOOT);
+#endif
     return EXIT_SUCCESS;
 }
 
