@@ -34,7 +34,7 @@ ifdef I_AM_KOUSH
 RECOVERY_NAME := ClockworkMod Recovery
 LOCAL_CFLAGS += -DI_AM_KOUSH
 else ifdef BCM21553_RECOVERY
-RECOVERY_NAME := BroadcomCWM Recovery
+RECOVERY_NAME := ClockworkMod Recovery
 LOCAL_CFLAGS += -DBCM21553_RECOVERY
 else
 RECOVERY_NAME := CWM-based Recovery
