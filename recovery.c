@@ -812,7 +812,11 @@ main(int argc, char **argv) {
     printf("Starting recovery on %s", ctime(&start));
 
     ui_init();
+#ifdef BCM21553_RECOVERY
+    ui_print(EXPAND(RECOVERY_BROADCOMCM)"\n");
+#else
     ui_print(EXPAND(RECOVERY_VERSION)"\n");
+#endif
     load_volume_table();
     process_volumes();
     LOGI("Processing arguments.\n");
