@@ -29,10 +29,10 @@
 
 #include <pixelflinger/pixelflinger.h>
 
-#ifndef BOARD_LDPI_RECOVERY
-	#include "font_10x18.h"
-#else
+#ifdef BOARD_LDPI_RECOVERY
 	#include "font_7x16.h"
+#else
+	#include "font_10x18.h"
 #endif
 
 #include "minui.h"
